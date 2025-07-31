@@ -5,6 +5,13 @@ import Todo from "./components/Todo";
 
 
 function App(props) {
+
+  function addTask(name) {
+    alert(name);
+  }
+
+
+
   const taskList = props.tasks.map((task) => (
     <Todo
       id={task.id}
@@ -18,7 +25,7 @@ function App(props) {
   return (
     <div className="todoapp stack-large">
       <h1>TodoMatic</h1>
-      <Form />
+      <Form onSubmit={addTask} />
       <div className="filters btn-group stack-exception">
         <FilterButton />
         <FilterButton />
